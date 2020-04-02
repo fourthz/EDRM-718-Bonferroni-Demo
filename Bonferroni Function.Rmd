@@ -1,0 +1,55 @@
+---
+title: "Bonferroni Function Development"
+author: "Mike Seaman"
+date: "2 April 2020"
+output: html_notebook
+---
+
+This notebook is for the development of a function to construct Bonferroni
+confidence interval when we have more than two conditions in our study.
+
+This is the function, bonf_cis, that will construct Bonferroni confidence 
+intervals.
+
+Required arguments:
+
+A matrix with the units in rows and the conditions in columns
+
+A matrix with each row containing the number of conditions to compare in the
+two columns
+
+A numeric with the level of confidence
+
+Returns:
+
+A matrix with each row containing the two conditions being compared and the
+lower and upper bounds for a confidence interval for the difference in means
+
+```{r}
+bonf_cis <- function(my_data, my_comp, conf.level) {
+
+  
+    
+  return(my_cis)
+}
+```
+
+
+This next code chunk is for testing the bonf_cis function using the hsb2 data.
+
+```{r}
+
+hsb2 <- read.csv("hsb2.csv")
+
+ses_math <- cbind(hsb2$ses, hsb2$math)
+
+comparisons <- matrix(c(1, 3,
+                        2, 3),
+                      ncol = 2,
+                      byrow = TRUE)
+
+bonf_cis(ses_math, comparisons, .95)
+
+```
+
+
